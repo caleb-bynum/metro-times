@@ -37,7 +37,7 @@ function App() {
         Metro data
       </h1>
       <pre className="metro-data">
-        {JSON.stringify(metroData, null, 2)}
+      {JSON.stringify(metroData, null, 2)}
       </pre>
     </div>
   )
