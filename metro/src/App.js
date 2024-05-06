@@ -36,9 +36,15 @@ function App() {
       <h1>
         Metro data
       </h1>
-      <pre className="metro-data">
-      {JSON.stringify(metroData, null, 2)}
-      </pre>
+      <div className="metro-data">
+        {metroData && metroData.Trains.map(train => (
+          <div key={train.Line + train.Min + train.Destination} className="train">
+            <div>Line: {train.Line}</div>
+            <div>Destination: {train.DestinationName}</div>
+            <div>Min: {train.Min}</div>
+          </div>
+        ))}
+      </div>
     </div>
   )
 }
