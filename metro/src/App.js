@@ -34,17 +34,31 @@ function App() {
   return (
     <div>
       <h1>
-        Metro data
+        Court House
       </h1>
-      <div className="metro-data">
-        {metroData && metroData.Trains.map(train => (
-          <div key={train.Line + train.Min + train.Destination} className="train">
-            <div>Line: {train.Line}</div>
-            <div>Destination: {train.DestinationName}</div>
-            <div>Min: {train.Min}</div>
-          </div>
-        ))}
-      </div>
+      <h2>
+        Next Trains
+      </h2>
+      <table className='metro-data'>
+        <thead>
+          <tr>
+            <th>Line</th>
+            <th>Car</th>
+            <th>Dest</th>
+            <th>Min</th>
+          </tr>
+        </thead>
+        <tbody>
+          {metroData && metroData.Trains.map((train, index) => (
+            <tr key={index}>
+              <td>{train.Line}</td>
+              <td> {train.Car}</td>
+              <td>{train.DestinationName}</td>
+              <td>{train.Min}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
     </div>
   )
 }
